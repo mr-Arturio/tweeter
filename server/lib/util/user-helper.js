@@ -1,11 +1,13 @@
 "use strict";
 
+//Chance library to generate random values for the user's first name, last name, and gender.
 const Chance      = require("chance"),
       chance      = new Chance();
 
+      //md5 library to hash strings
 const md5 = require('md5');
 
-
+//Function that generates a random user object with a name, handle, and avatar.
 module.exports = {
   generateRandomUser: () => {
     const gender    = chance.gender();
