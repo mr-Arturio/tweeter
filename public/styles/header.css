@@ -1,0 +1,10 @@
+header {
+  padding-top: 140px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff700;
+  background-image: url("/images/black-thread-light.png");
+}

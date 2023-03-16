@@ -27,6 +27,9 @@
   <!-- nav style -->
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
+  <!-- header css-->
+  <link rel="stylesheet" href="/styles/header.css" type="text/css">
+
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -37,14 +40,21 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
-    <span id="logo">Tweeter</span>
-    <div class="newTweet">
-    <p><strong>Write</strong> a new tweet</p>
-    </div>
-    <div class="arrowDown">
-    <i class="fa-solid fa-angles-down"></i>
+    <span class="logo">Tweeter</span>
+    <div class="sidetext">
+    <span><strong>Write</strong> a new tweet</span>
+        <i style="color: red;" class="fa-solid fa-angles-down"></i>
   </div>
   </nav>
+  <header>
+    <div>
+      <img src="/images/profile-hex.png" alt="">
+    </div>
+    <br>
+    <div>
+      <h2>Artur T</h2>
+    </div>
+  </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container"></main>
