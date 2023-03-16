@@ -1,7 +1,8 @@
 nav {
+  position: fixed;
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: #0057b7;
   color: #FFFFFF;
   padding: 1.5em;
   display: flex;
@@ -9,18 +10,13 @@ nav {
   align-items: center;
 }
 
-.newTweet {
-      margin-left: auto;
-    }
 
-.arrowDown {
-padding-top: 3em;
+.sidetext {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
 
-}
-
-#logo {
+.logo {
   font-family: 'Bungee', sans-serif;
 }
-
-
-
