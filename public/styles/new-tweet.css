@@ -1,0 +1,45 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+label {
+  display: none;
+}
+
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: solid;
+  background: none;
+  resize: none;
+  text-align: start
+}
+
+.test {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Bungee', sans-serif;
+}
+
+.test button {
+  margin-top: 1em;
+  display: flex;
+  background: #0057b7;
+  color: white;
+  justify-content: flex-start;
+}
+
+button:hover {
+  background: #0057b7;
+    color: white;
+}
+
+@media (hover: hover) {
+  button:hover {
+    color: #fff700;
+    background: #0057b7;
+  }
+}
