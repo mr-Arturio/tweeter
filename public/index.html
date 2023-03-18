@@ -23,18 +23,20 @@
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
   <!-- nav style -->
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-
+  <!-- new tweet form style -->
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <!-- header css-->
   <link rel="stylesheet" href="/styles/header.css" type="text/css">
-
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <!-- character counter JS-->
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+
 </head>
 
 <body>
@@ -57,7 +59,21 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container"></main>
+  <main class="container">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action="/tweets" method="POST">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text" rows="1" placeholder="What are you humming about?"></textarea>
+        <div class="test">
+          <button class="tweetButton" type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet">140</output>
+        </div>
+      </form>
+    </section>
+  </main>
+  <h1>Test</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolores repellendus, ex sit quisquam ipsam expedita? Illum, nisi explicabo laudantium eveniet alias laboriosam quisquam? Ratione porro commodi nulla in voluptas.</p>
 </body>
 
 </html>
