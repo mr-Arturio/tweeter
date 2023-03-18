@@ -1,0 +1,18 @@
+$(document).ready(function () {
+  console.log("The DOM is ready to be manipulated.");
+
+  const $tweetText = $('.new-tweet textarea');
+  const $charCounter = $('.new-tweet .counter');
+
+  $tweetText.on('input', function () {
+    const tweetLength = $tweetText.val().length;
+    const charsLeft = 140 - tweetLength;
+    $charCounter.text(charsLeft);
+
+    if (charsLeft < 0) {
+      $charCounter.css('color', 'red');
+    } else {
+      $charCounter.css('color', '');
+    }
+  });
+});
