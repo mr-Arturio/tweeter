@@ -17,14 +17,14 @@ textarea {
   text-align: start
 }
 
-.test {
+.tweetfoot {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: 'Bungee', sans-serif;
 }
 
-.test button {
+.tweetfoot button {
   margin-top: 1em;
   display: flex;
   background: #0057b7;

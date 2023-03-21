@@ -20,6 +20,7 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
+  background-image: url("/images/black-thread-light.png");
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
