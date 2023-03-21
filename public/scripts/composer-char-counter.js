@@ -5,8 +5,7 @@ $(document).ready(function () {
   const $charCounter = $('.new-tweet .counter');
 
   $tweetText.on('input', function () {
-    const tweetLength = $tweetText.val().length;
-    const charsLeft = 140 - tweetLength;
+    const charsLeft = 140 - $(this).val().length;
     $charCounter.text(charsLeft);
 
     if (charsLeft < 0) {
