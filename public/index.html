@@ -29,6 +29,9 @@
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <!-- header css-->
   <link rel="stylesheet" href="/styles/header.css" type="text/css">
+  <!--  tweet element css-->
+  <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css">
+
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- App JS -->
@@ -44,11 +47,11 @@
   <nav>
     <span class="logo">Tweeter</span>
     <div class="sidetext">
-    <span><strong>Write</strong> a new tweet</span>
-        <i style="color: red;" class="fa-solid fa-angles-down"></i>
-  </div>
+      <span><strong>Write</strong> a new tweet</span>
+      <i style="color: #fff700;" class="fa-solid fa-angles-down"></i>
+    </div>
   </nav>
-  <header>
+  <header class="user">
     <div>
       <img src="/images/profile-hex.png" alt="">
     </div>
@@ -65,15 +68,42 @@
       <form action="/tweets" method="POST">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text" rows="1" placeholder="What are you humming about?"></textarea>
-        <div class="test">
+        <div class="tweetfoot">
           <button class="tweetButton" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet">140</output>
         </div>
       </form>
     </section>
+
+    <section class="tweets">
+      <article class="tweet">
+
+        <header>
+          <div class="avatar">
+            <img src="/images/profile-hex.png" alt="User Avatar">
+            <h3>Username</h3>
+          </div>
+          <span class="handle">@username</span>
+        </header>
+
+        <div class="content">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id necessitatibus, aspernatur cupiditate porro ex
+            adipisci voluptatem esse aperiam aut praesentium nostrum voluptas alias! Suscipit, commodi esse. Optio
+            quaerat ducimus nam.</p>
+        </div>
+
+        <footer>
+          <p>10 days ago</p>
+          <div class="icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-thumbs-up"></i>
+          </div>
+        </footer>
+
+      </article>
+    </section>
   </main>
-  <h1>Test</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolores repellendus, ex sit quisquam ipsam expedita? Illum, nisi explicabo laudantium eveniet alias laboriosam quisquam? Ratione porro commodi nulla in voluptas.</p>
 </body>
 
 </html>
