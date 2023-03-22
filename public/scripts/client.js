@@ -7,31 +7,7 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function () {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+  const data = [];
 
   const renderTweets = function (tweets) {
     // loops through tweets
@@ -39,7 +15,7 @@ $(document).ready(function () {
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweetData);
       // takes return value and appends it to the tweets container
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
   };
 
@@ -73,37 +49,56 @@ $(document).ready(function () {
         </footer>
 
       </article>
-    `)
+    `);
     return $tweet;
-  }
+  };
 
   renderTweets(data);
 
 
- // add event listener for form submission
-$("#form-tweet").submit(function (event) {
-  console.log('hello');
-  // prevent the default behaviour of the submit event
-  event.preventDefault();
+  // add event listener for form submission
+  $("#form-tweet").submit(function (event) {
+    console.log('hello');
+    // prevent the default behaviour of the submit event
+    event.preventDefault();
 
-  // create AJAX POST request
-  $.ajax({
-    method: 'POST',
-    url: '/tweets',
-    data: $(this).serialize(), //turns a set of form data into a query string
-  
+    const tweetContent = $("#tweet-text").val();
+
+    // check if the tweet content is empty or exceeds 140 characters
+    if (!tweetContent || tweetContent.length > 140) {
+      // display an error message using browser alert
+      if (!tweetContent) {
+        alert("Error: tweet content is empty");
+      } else {
+        alert("Error: tweet content exceeds 140 characters");
+      }
+      return;
+    }
+
+    // create AJAX POST request
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: $(this).serialize(), //turns a set of form data into a query string
+      success: function (tweetData) {
+        // clear the tweet text area
+        $("#tweet-text").val("");
+        // create a new tweet element and prepend it to the tweets container
+        const $tweet = createTweetElement(tweetData);
+        $('#tweets-container').prepend($tweet);
+      }
     });
+
+
+    const loadTweets = function () {
+
+      $.ajax('/tweets', { method: 'GET' })
+        .then(function (tweets) {
+          renderTweets(tweets);
+        });
+    };
+
+    loadTweets();
+
   });
-
-  const loadTweets = function () {
-
-    $.ajax('/tweets', { method: 'GET' })
-      .then(function (tweets) {
-        renderTweets(tweets);
-      });
-  }
-
-  loadTweets();
-
-
 });
