@@ -22,6 +22,7 @@ article.tweet header {
 }
 
 .avatar img {
+  margin: .5em;
   width: 65px;
   height: 65px;
 }
@@ -32,17 +33,18 @@ article.tweet header {
 }
 
 .handle {
-   color: gray;
+  color: gray;
 }
 
 .content {
   text-align: left;
   margin-top: 10px;
- }
+  border-bottom: solid;
+}
 
 article.tweet footer {
   display: flex;
-  border-top: solid;
+  margin-top: 10px;
   justify-content: space-between;
 
 }
@@ -50,7 +52,7 @@ article.tweet footer {
 .icons {
   display: flex;
   align-items: center;
-  }
+}
 
 .icons i {
   color: #0057b7;

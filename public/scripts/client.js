@@ -64,7 +64,7 @@ $(document).ready(function () {
       </div>
   
       <footer>
-        <div class="date">${created_at}</div>
+        <div class="date">${timeago.format(created_at)}</div>
         <div class="icons">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
@@ -94,4 +94,16 @@ $("#form-tweet").submit(function (event) {
   
     });
   });
+
+  const loadTweets = function () {
+
+    $.ajax('/tweets', { method: 'GET' })
+      .then(function (tweets) {
+        renderTweets(tweets);
+      });
+  }
+
+  loadTweets();
+
+
 });
