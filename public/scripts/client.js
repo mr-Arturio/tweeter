@@ -6,7 +6,7 @@
 
 
 // Test / driver code (temporary). Eventually will get this from the server.
-$(document).ready(function (){
+$(document).ready(function () {
   const data = [
     {
       "user": {
@@ -36,9 +36,9 @@ $(document).ready(function (){
   const renderTweets = function (tweets) {
     // loops through tweets
     for (const tweetData of tweets) {
-           // calls createTweetElement for each tweet
-    const $tweet = createTweetElement(tweetData);
-    // takes return value and appends it to the tweets container
+      // calls createTweetElement for each tweet
+      const $tweet = createTweetElement(tweetData);
+      // takes return value and appends it to the tweets container
       $('#tweets-container').append($tweet);
     }
   };
@@ -48,7 +48,7 @@ $(document).ready(function (){
     const user = tweet.user;
     const content = tweet.content;
     const created_at = tweet.created_at;
-    let $tweet = $(`
+    const $tweet = $(`
     <article class="tweet">
 
       <header>
@@ -74,11 +74,24 @@ $(document).ready(function (){
 
       </article>
     `)
-  return $tweet;
+    return $tweet;
   }
 
   renderTweets(data);
+
+
+ // add event listener for form submission
+$("#form-tweet").submit(function (event) {
+  console.log('hello');
+  // prevent the default behaviour of the submit event
+  event.preventDefault();
+
+  // create AJAX POST request
+  $.ajax({
+    method: 'POST',
+    url: '/tweets',
+    data: $(this).serialize(), //turns a set of form data into a query string
+  
+    });
+  });
 });
-
-
-
