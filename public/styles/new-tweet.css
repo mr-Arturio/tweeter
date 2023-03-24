@@ -43,3 +43,14 @@ button:hover {
     background: #0057b7;
   }
 }
+
+.error {
+ 
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: red;
+  text-decoration-color: red;
+  background-color: #F4D0C3;
+}

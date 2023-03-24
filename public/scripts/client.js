@@ -31,7 +31,7 @@ $(document).ready(function () {
         <span class="handle">${user.handle}</span>
       </header>
       <div class="content">
-        <p>${content.text}</p>
+        ${$("<p>").text(content.text).html()}
       </div>
       <footer>
         <div class="date">${timeago.format(created_at)}</div>
@@ -61,12 +61,18 @@ $(document).ready(function () {
     event.preventDefault();
 
     const tweetContent = $("#tweet-text").val();
-
+    // Slide up the error message if it's visible
+    $('.error:visible').slideUp();
+    
     // Check if the tweet content is empty or exceeds 140 characters
     if (!tweetContent) {
-      alert("Error: tweet content is empty");
+      $('.error')
+        .text("⚠ Error: tweet content is empty ⚠")
+        .slideDown();
     } else if (tweetContent.length > 140) {
-      alert("Error: tweet content exceeds 140 characters");
+      $('.error')
+        .text("⚠ Error: tweet content exceeds 140 characters ⚠")
+        .slideDown();
     } else {
       // Create AJAX POST request
       $.ajax({
@@ -84,5 +90,6 @@ $(document).ready(function () {
         }
       });
     }
+   
   });
 });

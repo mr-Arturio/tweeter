@@ -22,22 +22,22 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="./styles/layout.css" type="text/css" />
   <!-- nav style -->
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
   <!-- new tweet form style -->
-  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
   <!-- header css-->
-  <link rel="stylesheet" href="/styles/header.css" type="text/css">
+  <link rel="stylesheet" href="./styles/header.css" type="text/css">
   <!--  tweet element css-->
-  <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css">
+  <link rel="stylesheet" href="./styles/tweet-container.css" type="text/css">
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="./scripts/client.js"></script>
   <!-- character counter JS-->
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
   <!-- displaying the time passed since a date -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
     integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
@@ -69,6 +69,7 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
+      <div class="error"></div>
       <form id="form-tweet" action="/tweets" method="POST">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text" rows="4" placeholder="What are you humming about?"></textarea>
