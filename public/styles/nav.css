@@ -1,13 +1,14 @@
 nav {
-  position: fixed;
+  position: static;
   height: 120px;
   width: 100%;
-  background-color: #0057b7;
-  color: #FFFFFF;
+  background-color: #fff700;
+  color: #0057b7;
   padding: 1.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-image: url("/images/black-thread-light.png");
 }
 
 
@@ -20,3 +21,18 @@ nav {
 .logo {
   font-family: 'Bungee', sans-serif;
 }
+
+i.fa-solid.fa-angles-down {
+  color:rgba(255, 0, 0, 0.793);
+}
+
+
+
+@media (min-width: 768px) {
+  nav {
+    position: fixed;
+    color: #FFFFFF;
+  background-color: #0057b7;
+  background-image: none;
+  }
+  }
