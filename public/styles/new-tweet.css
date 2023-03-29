@@ -1,7 +1,6 @@
 form {
   display: flex;
   flex-direction: column;
-
 }
 
 label {
@@ -11,10 +10,12 @@ label {
 textarea {
   width: 100%;
   border: none;
-  border-bottom: solid;
+  border-bottom: 1px solid;
   background: none;
   resize: none;
-  text-align: start
+  text-align: start;
+  padding-top: 10px;
+  word-wrap: break-word;
 }
 
 .tweetfoot {
@@ -27,25 +28,16 @@ textarea {
 .tweetfoot button {
   margin-top: 1em;
   display: flex;
+  justify-content: flex-start;
   background: #0057b7;
   color: white;
-  justify-content: flex-start;
 }
 
-button:hover {
-  background: #0057b7;
-    color: white;
-}
-
-@media (hover: hover) {
-  button:hover {
-    color: #fff700;
-    background: #0057b7;
-  }
+.tweetfoot button:hover {
+  color: #fff700;
 }
 
 .error {
- 
   border-radius: 0.5em;
   margin-bottom: 1em;
   font-weight: bold;
