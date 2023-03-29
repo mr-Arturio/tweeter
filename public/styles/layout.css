@@ -44,6 +44,7 @@ main {
   padding: 10px;
   margin: 50px 0;
   transition: box-shadow 0.3s ease-in-out;
+  white-space: normal;
 }
 
 .tweet:hover {
@@ -80,6 +81,7 @@ article.tweet header {
   text-align: left;
   margin-top: 10px;
   border-bottom: solid;
+  word-wrap: break-word;
 }
 
 article.tweet footer {
@@ -104,13 +106,16 @@ article.tweet footer {
   color: #bfb90c;
 }
 
+/* Desktop layout*/
 @media (min-width: 768px) {
   .desktop {
     display: flex;
     flex-direction: row;
     gap: 50px;
     padding: 3rem;
-
   }
 
+  .new-tweet {
+    padding-top: 100px;
+  }
 }
