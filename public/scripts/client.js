@@ -7,17 +7,16 @@
 $(document).ready(function () {
   const renderTweets = function (tweets) {
     $('#tweets-container').empty();
-       // loops through tweets
+    // loops through tweets
     for (const tweetData of tweets) {
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweetData);
-      // takes return value and prepend (appends? it to the tweets container
+      // takes return value and prepend it to the tweets container
       $('#tweets-container').prepend($tweet);
     }
   };
 
   const createTweetElement = function (tweet) {
-    console.log('Create tweet:', tweet);
     const user = tweet.user;
     const content = tweet.content;
     const created_at = tweet.created_at;
@@ -63,7 +62,7 @@ $(document).ready(function () {
     const tweetContent = $("#tweet-text").val();
     // Slide up the error message if it's visible
     $('.error:visible').slideUp();
-    
+
     // Check if the tweet content is empty or exceeds 140 characters
     if (!tweetContent) {
       $('.error')
@@ -86,10 +85,10 @@ $(document).ready(function () {
           $("#tweet-text").val("");
           // reset count to 140
           $('.counter').text('140');
-          
+
         }
       });
     }
-   
+
   });
 });
